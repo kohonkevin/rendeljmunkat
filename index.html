@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rendelj Munkát – Helyi szakemberek Kulcs, Ráckeve és környékén</title>
+<meta name="description" content="Kerti munkák, ház körüli javítások, festés, takarítás és bontás Kulcs, Ráckeve és a környező települések területén. Hívj, és egy megbízható szakembert küldünk!">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2351704A'/%3E%3Cpath d='M9 19c0-7 5-11 13-11 0 8-4 13-11 13-3 0-2-1-2-2z' fill='%23F6F1E4'/%3E%3Cpath d='M9 19c4-2 8-5 10-8' stroke='%23F6F1E4' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F1E4;
+    --cream-deep:#ECE1CA;
+    --green:#51704A;
+    --green-deep:#3C5536;
+    --green-soft:#DEE7D2;
+    --ink:#2C2620;
+    --ink-soft:#6E6557;
+    --radius:18px;
+    --shadow:0 10px 30px -18px rgba(44,38,32,.45);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  ul{margin:0;padding:0;list-style:none;}
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--green-deep);
+  }
+  .eyebrow::before{
+    content:'';
+    width:22px;height:2px;
+    background:var(--green);
+    border-radius:2px;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 28px;
+    border-radius:999px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:1.02rem;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn--primary{
+    background:var(--green);
+    color:var(--cream);
+    box-shadow:var(--shadow);
+  }
+  .btn--primary:hover{
+    background:var(--green-deep);
+    box-shadow:0 14px 34px -16px rgba(60,85,54,.55);
+  }
+  .btn--ghost{
+    background:transparent;
+    color:var(--green-deep);
+    border-color:var(--green-deep);
+  }
+  .btn--ghost:hover{
+    background:var(--green-deep);
+    color:var(--cream);
+  }
+  .btn--block{width:100%;}
+  .btn svg{width:20px;height:20px;flex-shrink:0;}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(246,241,228,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(60,85,54,.1);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 24px;
+    max-width:1080px;
+    margin:0 auto;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-size:1.25rem;
+    font-weight:600;
+    text-decoration:none;
+    color:var(--ink);
+    flex-shrink:0;
+  }
+  .logo-mark{
+    width:38px;height:38px;
+    border-radius:11px;
+    background:var(--green);
+    color:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .logo-mark svg{width:22px;height:22px;}
+  .logo span{color:var(--green-deep);}
+
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .header-call{
+    display:none;
+  }
+  .hamburger{
+    width:46px;height:46px;
+    border-radius:12px;
+    border:1px solid rgba(60,85,54,.25);
+    background:transparent;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    gap:5px;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .hamburger span{
+    display:block;
+    width:20px;height:2px;
+    background:var(--ink);
+    border-radius:2px;
+    transition:transform .25s ease, opacity .2s ease;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-nav{
+    position:fixed;
+    inset:0;
+    top:0;
+    background:var(--cream);
+    z-index:49;
+    display:flex;
+    flex-direction:column;
+    padding:104px 28px 40px;
+    gap:8px;
+    transform:translateY(-100%);
+    opacity:0;
+    transition:transform .35s ease, opacity .3s ease;
+    pointer-events:none;
+  }
+  .mobile-nav.is-open{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .mobile-nav a{
+    font-family:'Fraunces', serif;
+    font-size:1.6rem;
+    font-weight:500;
+    text-decoration:none;
+    color:var(--ink);
+    padding:14px 4px;
+    border-bottom:1px solid rgba(60,85,54,.14);
+  }
+  .mobile-nav .btn{margin-top:24px;}
+  .mobile-nav-foot{
+    margin-top:auto;
+    color:var(--ink-soft);
+    font-size:.95rem;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:64px 0 56px;
+  }
+  .hero-decor{
+    position:absolute;
+    top:-60px; right:-90px;
+    width:340px;
+    color:var(--green);
+    opacity:.16;
+    transform:rotate(12deg);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 7vw, 3.4rem);
+    max-width:14ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--green-deep);
+    position:relative;
+  }
+  .hero-lede{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-ctas{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .hero-note{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:.92rem;
+    color:var(--green-deep);
+    font-weight:600;
+  }
+  .hero-note svg{width:18px;height:18px;flex-shrink:0;}
+
+  .hero-strip{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:8px;
+  }
+  .hero-strip-item{
+    background:var(--cream-deep);
+    border-radius:14px;
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:.88rem;
+    font-weight:600;
+    color:var(--green-deep);
+  }
+  .hero-strip-item svg{width:20px;height:20px;flex-shrink:0;}
+
+  /* ---------- Vine dividers ---------- */
+  .vine{
+    width:100%;
+    display:block;
+    color:var(--green);
+    margin:8px 0;
+  }
+  .vine path.stem{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;}
+  .vine .leaf{fill:var(--green-soft);stroke:var(--green);stroke-width:1.2;}
+  .vine .leaf-sway{transform-origin:center;}
+  @media (prefers-reduced-motion:no-preference){
+    .vine .leaf-sway{animation:sway 6s ease-in-out infinite;}
+    .vine .leaf-sway:nth-of-type(2){animation-delay:-2s;}
+    .vine .leaf-sway:nth-of-type(3){animation-delay:-4s;}
+  }
+  @keyframes sway{
+    0%,100%{transform:rotate(-3deg);}
+    50%{transform:rotate(3deg);}
+  }
+
+  /* ---------- Sections generic ---------- */
+  section{padding:56px 0;}
+  .section-head{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:36px;
+    max-width:46ch;
+  }
+  .section-head h2{font-size:clamp(1.7rem, 5vw, 2.4rem);}
+  .section-head p{color:var(--ink-soft);}
+
+  /* ---------- Trust strip ---------- */
+  .trust{padding:8px 0 0;}
+  .trust ul{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+  .trust li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--cream-deep);
+    border-radius:14px;
+    padding:14px 14px;
+    font-weight:600;
+    font-size:.92rem;
+    color:var(--green-deep);
+  }
+  .trust li svg{width:20px;height:20px;flex-shrink:0;color:var(--green);}
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .service-card{
+    background:#fff;
+    border:1px solid var(--cream-deep);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .service-card summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:20px 22px;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .service-card summary::-webkit-details-marker{display:none;}
+  .service-icon{
+    width:50px;height:50px;
+    border-radius:14px;
+    background:var(--green-soft);
+    color:var(--green-deep);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .service-icon svg{width:26px;height:26px;}
+  .service-title{flex:1;}
+  .service-title h3{font-size:1.18rem;font-weight:600;}
+  .service-title span{
+    display:block;
+    font-size:.86rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+  .service-chevron{
+    width:30px;height:30px;
+    flex-shrink:0;
+    color:var(--green);
+    transition:transform .25s ease;
+  }
+  .service-card[open] .service-chevron{transform:rotate(180deg);}
+  .service-body{
+    padding:0 22px 22px 22px;
+    border-top:1px solid var(--cream-deep);
+    padding-top:18px;
+  }
+  .service-list{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .service-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:.96rem;
+  }
+  .service-list li svg{
+    width:18px;height:18px;
+    flex-shrink:0;
+    margin-top:3px;
+    color:var(--green);
+  }
+  .service-extra{
+    margin-top:14px;
+    font-size:.92rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  .services-foot{
+    margin-top:28px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    align-items:center;
+  }
+  .services-foot p{color:var(--ink-soft);max-width:40ch;}
+
+  /* ---------- How it works ---------- */
+  .steps{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .step{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    background:var(--cream-deep);
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .step-num{
+    font-family:'Fraunces', serif;
+    font-size:1.6rem;
+    font-weight:600;
+    color:var(--green-deep);
+    background:#fff;
+    border-radius:12px;
+    width:46px;height:46px;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .step h3{font-size:1.12rem;margin-bottom:6px;}
+  .step p{color:var(--ink-soft);font-size:.95rem;}
+
+  /* ---------- Why us ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .why-card{
+    border:1px solid var(--cream-deep);
+    border-radius:var(--radius);
+    padding:22px;
+    background:#fff;
+  }
+  .why-card .service-icon{margin-bottom:14px;}
+  .why-card h3{font-size:1.1rem;margin-bottom:6px;}
+  .why-card p{color:var(--ink-soft);font-size:.95rem;}
+
+  /* ---------- Coverage ---------- */
+  .coverage{
+    background:var(--green-deep);
+    color:var(--cream);
+    border-radius:28px;
+    padding:40px 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  .coverage-decor{
+    position:absolute;
+    bottom:-40px; left:-50px;
+    width:220px;
+    color:var(--cream);
+    opacity:.08;
+  }
+  .coverage-inner{position:relative;z-index:1;}
+  .coverage .section-head p{color:rgba(246,241,228,.78);}
+  .coverage .eyebrow{color:var(--cream);}
+  .coverage .eyebrow::before{background:var(--cream);}
+  .town-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+  }
+  .town-list li{
+    border:1px solid rgba(246,241,228,.35);
+    border-radius:999px;
+    padding:8px 18px;
+    font-size:.92rem;
+    font-weight:500;
+  }
+  .coverage-note{
+    margin-top:24px;
+    font-size:.95rem;
+    color:rgba(246,241,228,.85);
+    max-width:48ch;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .cta{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+  }
+  .cta h2{font-size:clamp(1.9rem, 6vw, 2.6rem);max-width:18ch;}
+  .cta p{color:var(--ink-soft);max-width:36ch;}
+  .cta-phone{
+    font-family:'Fraunces', serif;
+    font-size:clamp(1.6rem,6vw,2.1rem);
+    font-weight:600;
+    color:var(--green-deep);
+    text-decoration:none;
+    letter-spacing:.02em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--cream-deep);
+    padding:36px 0 110px;
+  }
+  .footer-inner{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .footer-logo{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Fraunces', serif;font-size:1.1rem;font-weight:600;
+  }
+  .footer-logo .logo-mark{width:32px;height:32px;border-radius:9px;}
+  .footer-logo .logo-mark svg{width:18px;height:18px;}
+  .footer-links{
+    display:flex;flex-wrap:wrap;gap:18px;
+    font-size:.92rem;
+  }
+  .footer-links a{text-decoration:none;color:var(--ink-soft);}
+  .footer-links a:hover{color:var(--green-deep);}
+  .footer-bottom{
+    font-size:.85rem;
+    color:var(--ink-soft);
+    border-top:1px solid var(--cream-deep);
+    padding-top:18px;
+  }
+
+  /* ---------- Floating call button ---------- */
+  .floating-call{
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:40;
+    width:calc(100% - 32px);
+    max-width:420px;
+  }
+  .floating-call .btn{
+    width:100%;
+    box-shadow:0 16px 36px -14px rgba(44,38,32,.5);
+  }
+
+  /* ---------- Reveal animation ---------- */
+  .js .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .js .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion:reduce){
+    .js .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  /* ---------- Desktop ---------- */
+  @media (min-width:760px){
+    .hamburger{display:none;}
+    .mobile-nav{display:none;}
+    .header-call{
+      display:inline-flex;
+    }
+    .header-actions nav{
+      display:flex;
+      gap:24px;
+      margin-right:8px;
+      font-weight:500;
+      font-size:.96rem;
+    }
+    .header-actions nav a{text-decoration:none;}
+    .header-actions nav a:hover{color:var(--green-deep);}
+    .header-inner{padding:18px 24px;}
+
+    .hero{padding:96px 0 80px;}
+    .hero-inner{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:48px;
+    }
+    .hero-ctas{flex-direction:row;}
+    .hero-decor{width:460px;top:-100px;right:-120px;}
+    .hero-art{
+      display:flex;
+      justify-content:center;
+    }
+    .hero-strip{
+      grid-column:1 / -1;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .trust ul{grid-template-columns:repeat(4,1fr);}
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+    }
+    .services-foot{grid-column:1/-1;}
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+    }
+    .step{flex-direction:column;}
+    .step-num{margin-bottom:8px;}
+
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+
+    .footer-inner{
+      flex-direction:row;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .footer-bottom{
+      width:100%;
+    }
+
+    .floating-call{display:none;}
+  }
+
+  @media (min-width:1000px){
+    .why-grid{grid-template-columns:repeat(4,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ ICON SPRITE ============ -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 14C4 7 9 3 19 3c0 10-4 15-13 15-3 0-2-1-2-2z"/>
+    <path d="M4 14c5-2 9-6 11-9"/>
+  </symbol>
+  <symbol id="i-check-leaf" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M4 14C4 7 9 3 19 3c0 10-4 15-13 15-3 0-2-1-2-2z"/>
+  </symbol>
+  <symbol id="i-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 11.5 12 4l9 7.5"/>
+    <path d="M5.5 10v9h13v-9"/>
+    <path d="M10 19v-5h4v5"/>
+  </symbol>
+  <symbol id="i-broom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 3 6 11.5"/>
+    <path d="M11 14 4 21M9 12l-6 6M13 16l-6 6"/>
+    <path d="M14.5 3c2 0 5 3 5 5l-8.5 8.5L7 12.5C7 10.5 12.5 3 14.5 3z"/>
+  </symbol>
+  <symbol id="i-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 5 19 10l-2.5 2.5L11.5 7.5z"/>
+    <path d="M12.7 8.8 4 17.5 6.5 20l8.7-8.7"/>
+  </symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11"/>
+    <path d="M12 2 9.5 4.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5"/>
+    <path d="M4.5 6.5 4 9.3M4.5 6.5l2.8.5M19.5 6.5l.5 2.8M19.5 6.5l-2.8.5M4.5 17.5l2.8-.5M4.5 17.5l-.5-2.8M19.5 17.5l-.5-2.8M19.5 17.5l-2.8-.5"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C9.5 20 4 14.5 4 7a2 2 0 0 1 1-3z"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M12 7v5l3.5 2"/>
+  </symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="10" r="6.5"/>
+    <path d="M9 10.2l1.8 1.8 4-4"/>
+    <path d="M8.5 15.5 7 21l5-2.2L17 21l-1.5-5.5"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s7-6.2 7-11.3A7 7 0 0 0 5 9.7C5 14.8 12 21 12 21z"/>
+    <circle cx="12" cy="9.5" r="2.4"/>
+  </symbol>
+  <symbol id="i-seed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21V11"/>
+    <path d="M12 13c0-4 3-7 7-7 0 4-3 7-7 7z"/>
+    <path d="M12 15c0-3.5-2.5-6-6-6 0 3.5 2.5 6 6 6z"/>
+  </symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 5h16v10H9l-4 4v-4H4z"/>
+  </symbol>
+  <symbol id="i-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 3h9l4 4v14H6z"/>
+    <path d="M15 3v4h4"/>
+    <path d="M9 12h6M9 15h6M9 18h3"/>
+  </symbol>
+  <symbol id="i-tools" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 6.5 18 3l3 3-3.5 3.5"/>
+    <path d="M17.5 6 8 15.5"/>
+    <path d="M3 21l4-1 1-4-3-3-4 1z"/>
+    <path d="M9.5 12.5 7 10"/>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/>
+    <path d="M9 12l2.2 2.2L15 10"/>
+  </symbol>
+</defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-leaf"/></svg></span>
+      Rendelj<span>Munkát</span>
+    </a>
+    <div class="header-actions">
+      <nav>
+        <a href="#szolgaltatasok">Szolgáltatások</a>
+        <a href="#hogyan-mukodik">Hogyan működik</a>
+        <a href="#terulet">Terület</a>
+      </nav>
+      <a class="btn btn--primary header-call" href="tel:+36308558936">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>
+        +36 30 855 8936
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#szolgaltatasok">Szolgáltatások</a>
+  <a href="#hogyan-mukodik">Hogyan működik</a>
+  <a href="#miert-mi">Miért minket</a>
+  <a href="#terulet">Terület</a>
+  <a class="btn btn--primary" href="tel:+36308558936">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>
+    Hívás: +36 30 855 8936
+  </a>
+  <p class="mobile-nav-foot">Kulcs, Ráckeve és környéke</p>
+</nav>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <svg class="hero-decor" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M10 180C10 90 70 30 190 20"/>
+      <path d="M40 150c10-30 40-50 70-55"/>
+      <path d="M70 100c8-18 28-30 50-32"/>
+    </svg>
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Kulcs · Ráckeve · környék</p>
+        <h1>Amíg te a fontos dolgaiddal foglalkozol, <em>mi elintézzük a többit.</em></h1>
+        <p class="hero-lede">Kerti munkák, ház körüli javítások, festés, takarítás és bontás — egyetlen hívással. Megbízható, helyi szakembereket küldünk, gyorsan és korrekt módon.</p>
+        <div class="hero-ctas">
+          <a class="btn btn--primary" href="tel:+36308558936">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>
+            Hívj most: +36 30 855 8936
+          </a>
+          <a class="btn btn--ghost" href="#szolgaltatasok">Mit vállalunk?</a>
+        </div>
+        <p class="hero-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-badge"/></svg>
+          Ingyenes árajánlat telefonon, kötelezettség nélkül
+        </p>
+      </div>
+      <div class="hero-art reveal" aria-hidden="true">
+        <svg width="280" height="280" viewBox="0 0 280 280" fill="none">
+          <circle cx="140" cy="140" r="132" fill="var(--cream-deep)"/>
+          <g stroke="var(--green)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M60 190c0-55 40-95 110-100"/>
+            <path d="M85 170c8-32 35-58 70-66"/>
+            <path d="M100 200c30-6 55-26 65-55"/>
+          </g>
+          <g fill="var(--green-soft)" stroke="var(--green)" stroke-width="1.2">
+            <path d="M150 78c22-2 40 12 44 34-22 4-44-10-44-34z"/>
+            <path d="M96 156c4-22 24-38 46-40-2 22-24 40-46 40z"/>
+            <path d="M118 210c-18-8-28-28-24-48 20 6 32 28 24 48z"/>
+          </g>
+          <circle cx="140" cy="140" r="132" fill="none" stroke="var(--green)" stroke-width="1.4" stroke-dasharray="2 10"/>
+        </svg>
+      </div>
+      <div class="hero-strip reveal">
+        <div class="hero-strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-pin"/></svg> Helyi szakemberek</div>
+        <div class="hero-strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg> Gyors kiszállás</div>
+        <div class="hero-strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg> Korrekt, átlátható</div>
+        <div class="hero-strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-seed"/></svg> Rugalmas időpont</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vine divider -->
+  <svg class="vine reveal" viewBox="0 0 400 50" preserveAspectRatio="none" aria-hidden="true">
+    <path class="stem" d="M0,28 C50,10 100,42 150,26 S250,8 300,28 S380,44 400,26"/>
+    <g class="leaf-sway"><path class="leaf" d="M118 22c14-10 30-8 38 2-12 10-30 8-38-2z"/></g>
+    <g class="leaf-sway"><path class="leaf" d="M255 16c8-14 24-18 36-12-6 14-24 20-36 12z"/></g>
+    <g class="leaf-sway"><path class="leaf" d="M330 32c10-12 26-14 36-6-8 12-26 16-36 6z"/></g>
+  </svg>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="szolgaltatasok">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Mivel tudunk segíteni</p>
+        <h2>Válassz egy területet, és nézd meg, mit vállalunk pontosan.</h2>
+        <p>Kattints egy kategóriára a részletekért. Ha valami nincs felsorolva, attól még simán lehet, hogy meg tudjuk oldani — csak hívj!</p>
+      </div>
+
+      <div class="services-grid">
+
+        <details class="service-card reveal" open>
+          <summary>
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-leaf"/></svg></span>
+            <span class="service-title">
+              <h3>Kert &amp; udvar</h3>
+              <span>Fűnyírástól a kerti útig</span>
+            </span>
+            <svg class="service-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="service-body">
+            <ul class="service-list">
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Fűnyírás, rendszeres karbantartással is</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Sövény- és bokornyírás, formázás</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Fakivágás, ágak eltávolítása</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Tűzifa hasítás, aprítás</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Gereblyézés, kerti hulladék összeszedése</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Virágágyás kialakítása, ültetés</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Locsolórendszer telepítése</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Kerti járdák, ösvények kialakítása</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Medence karbantartása, tisztítása</li>
+            </ul>
+            <p class="service-extra">Tipp: rendszeres fűnyírásra havi megállapodást is tudunk kötni — szólj, és kitaláljuk a legjobb ritmust a kertednek.</p>
+          </div>
+        </details>
+
+        <details class="service-card reveal">
+          <summary>
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-house"/></svg></span>
+            <span class="service-title">
+              <h3>Ház körüli munkák</h3>
+              <span>Festés, javítás, karbantartás</span>
+            </span>
+            <svg class="service-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="service-body">
+            <ul class="service-list">
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Festés — belső és külső falak, kerítés, korlát</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Gipszelés, fal- és mennyezetjavítás</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Csempézés, járólapozás</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Kisebb villanyszerelési munkák</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Csapcsere, kisebb vízvezeték-javítás</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Ereszcsatorna tisztítása és javítása</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Tetőjavítás, cserépcsere</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Kerítés építése, javítása</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Kapu felszerelése, beállítása</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Garázsajtó javítása</li>
+            </ul>
+            <p class="service-extra">Akár csak egy lyukat kell befoltozni, akár az egész házat újra kéne festeni — mondd el telefonon, és megmondjuk, mi a legjobb megoldás.</p>
+          </div>
+        </details>
+
+        <details class="service-card reveal">
+          <summary>
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-broom"/></svg></span>
+            <span class="service-title">
+              <h3>Takarítás</h3>
+              <span>Otthonra és üzletre is</span>
+            </span>
+            <svg class="service-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="service-body">
+            <ul class="service-list">
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Lakás- és házikatakarítás</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Irodatakarítás</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Nagytakarítás be- és kiköltözés előtt</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Ablaktisztítás</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Szőnyeg- és kárpittisztítás</li>
+            </ul>
+            <p class="service-extra">Egyszeri nagytakarítás vagy rendszeres takarítás is megoldható — telefonon átbeszéljük, mire van szükséged.</p>
+          </div>
+        </details>
+
+        <details class="service-card reveal">
+          <summary>
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-hammer"/></svg></span>
+            <span class="service-title">
+              <h3>Bontás &amp; nagyobb munkák</h3>
+              <span>Fal, melléképület, kerítés</span>
+            </span>
+            <svg class="service-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="service-body">
+            <ul class="service-list">
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Régi falak, válaszfalak elbontása</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Melléképületek, ólak bontása</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Régi kerítés, járda eltávolítása</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Egyéb fizikai munkák, amiket telefonon átbeszélünk</li>
+            </ul>
+            <p class="service-extra">Minden bontási munka más — hívj, mondd el mire gondoltál, és helyszíni felmérés után pontosan tudjuk, mire van szükség.</p>
+          </div>
+        </details>
+
+        <details class="service-card reveal">
+          <summary>
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-snow"/></svg></span>
+            <span class="service-title">
+              <h3>Szezonális munkák</h3>
+              <span>Tél, ünnepek, tűzifa</span>
+            </span>
+            <svg class="service-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="service-body">
+            <ul class="service-list">
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Hólapátolás, síkosságmentesítés</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Ünnepi dekoráció fel- és leszerelése</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Tűzifa berakása, rendezett tárolása</li>
+            </ul>
+            <p class="service-extra">Sürgős havazás vagy jeges járda esetén próbálunk minél hamarabb kimenni — hívj, és megoldjuk.</p>
+          </div>
+        </details>
+
+        <details class="service-card reveal">
+          <summary>
+            <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-tools"/></svg></span>
+            <span class="service-title">
+              <h3>Valami más?</h3>
+              <span>Kérdezz bátran</span>
+            </span>
+            <svg class="service-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="service-body">
+            <ul class="service-list">
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Olyan munkák, amiket egy átlagos felnőtt el tudna végezni, de most nincs rá ideje vagy ereje</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Egyszeri, ritka vagy "furcsa" feladatok</li>
+              <li><svg viewBox="0 0 24 24"><use href="#i-check-leaf"/></svg> Kombinált munkák — pl. kert + ház körül egy nap alatt</li>
+            </ul>
+            <p class="service-extra">Ha nem vagy biztos benne, hogy mi tudjuk-e megoldani — csak hívj, és kiderítjük közösen.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <div class="services-foot reveal">
+        <p>Az árak munkánként eltérőek, ezért telefonon adunk pontos, korrekt árajánlatot — semmi meglepetés.</p>
+        <a class="btn btn--primary" href="tel:+36308558936">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>
+          Kérek árajánlatot: +36 30 855 8936
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vine divider -->
+  <svg class="vine reveal" viewBox="0 0 400 50" preserveAspectRatio="none" aria-hidden="true">
+    <path class="stem" d="M0,24 C60,42 110,6 170,24 S260,46 320,22 S390,8 400,20"/>
+    <g class="leaf-sway"><path class="leaf" d="M70 30c-12-10-28-8-36 2 12 10 28 8 36-2z"/></g>
+    <g class="leaf-sway"><path class="leaf" d="M205 18c10-14 28-16 38-8-8 14-28 18-38 8z"/></g>
+  </svg>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section id="hogyan-mukodik">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Hogyan működik</p>
+        <h2>Három lépésben, gyorsan elintézve.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Hívsz, vagy üzenetet írsz</h3>
+            <p>Elmondod, mire van szükséged — akár pár szóban is elég. A telefonszám a +36 30 855 8936.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Adunk egy korrekt árajánlatot</h3>
+            <p>Gyorsan, ingyen és kötelezettség nélkül megmondjuk, mennyibe kerül és mikor tudunk jönni.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Kimegyünk, és elvégezzük</h3>
+            <p>Egy megbízható, helyi szakember megoldja a feladatot — rendesen, ahogy elvártad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vine divider -->
+  <svg class="vine reveal" viewBox="0 0 400 50" preserveAspectRatio="none" aria-hidden="true">
+    <path class="stem" d="M0,30 C70,12 140,46 210,26 S300,6 400,28"/>
+    <g class="leaf-sway"><path class="leaf" d="M150 30c14-8 30-4 36 8-14 8-30 4-36-8z"/></g>
+    <g class="leaf-sway"><path class="leaf" d="M280 16c6-16 22-22 34-16-4 16-22 24-34 16z"/></g>
+    <g class="leaf-sway"><path class="leaf" d="M40 22c-6-14-22-20-34-14 4 14 22 20 34 14z"/></g>
+  </svg>
+
+  <!-- ============ WHY US ============ -->
+  <section id="miert-mi">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Miért minket válassz</p>
+        <h2>Egyszerű elvek, amiket komolyan veszünk.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-pin"/></svg></span>
+          <h3>Helyiek vagyunk</h3>
+          <p>Ismerjük a környéket, a falvakat és a városokat — gyorsan ott vagyunk, ahol szükség van ránk.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></span>
+          <h3>Korrekt árak</h3>
+          <p>Előre tisztázott, átlátható árajánlat — semmi rejtett költség, semmi meglepetés a végén.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-badge"/></svg></span>
+          <h3>Megbízható emberek</h3>
+          <p>Csak olyan szakembereket küldünk ki, akikben mi magunk is megbíznánk a saját portánkon.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></span>
+          <h3>Rugalmas időpontok</h3>
+          <p>Hétvégén és sürgős esetben is igyekszünk megoldást találni — csak jelezd, mikor lenne jó.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COVERAGE ============ -->
+  <section id="terulet">
+    <div class="container">
+      <div class="coverage reveal">
+        <svg class="coverage-decor" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 190C10 100 70 40 190 30"/>
+          <path d="M40 160c10-30 40-50 70-55"/>
+        </svg>
+        <div class="coverage-inner">
+          <div class="section-head">
+            <p class="eyebrow">Hol vállalunk munkát</p>
+            <h2>Kulcs, Ráckeve és a környező települések.</h2>
+            <p>Ha a falud vagy városod nincs a listán, az nem jelenti, hogy nem megy — hívj, és megnézzük.</p>
+          </div>
+          <ul class="town-list">
+            <li>Kulcs</li>
+            <li>Ráckeve</li>
+            <li>Szigetszentmiklós</li>
+            <li>Szigetbecse</li>
+            <li>Lórév</li>
+            <li>Dunaújváros</li>
+            <li>Rácalmás</li>
+            <li>Adony</li>
+            <li>Apostag</li>
+            <li>...és a környező falvak</li>
+          </ul>
+          <p class="coverage-note">A nagyobb munkáknál (festés, bontás, kerti átalakítás) a környező megyékbe is tudunk utazni — ezt telefonon egyeztetjük.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="cta">
+    <div class="container cta">
+      <p class="eyebrow reveal">Készen állsz?</p>
+      <h2 class="reveal">Egy hívás, és intézzük is.</h2>
+      <p class="reveal">Ingyenes, gyors árajánlat — nincs kötelezettség, nincs nyomás. Csak hívj, amikor kényelmes.</p>
+      <a class="cta-phone reveal" href="tel:+36308558936">+36 30 855 8936</a>
+      <a class="btn btn--primary reveal" href="tel:+36308558936">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>
+        Hívás indítása
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-leaf"/></svg></span>
+      RendeljMunkát
+    </div>
+    <ul class="footer-links">
+      <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="#hogyan-mukodik">Hogyan működik</a></li>
+      <li><a href="#terulet">Terület</a></li>
+      <li><a href="tel:+36308558936">+36 30 855 8936</a></li>
+    </ul>
+  </div>
+  <div class="container footer-bottom">
+    © 2026 RendeljMunkát — Kulcs, Ráckeve és környéke. Minden jog fenntartva.
+  </div>
+</footer>
+
+<!-- ============ FLOATING CALL BUTTON ============ -->
+<div class="floating-call">
+  <a class="btn btn--primary" href="tel:+36308558936">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg>
+    Hívj most: +36 30 855 8936
+  </a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+
+  // Hamburger menu
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', function(){
+    var open = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!open));
+    mobileNav.classList.toggle('is-open', !open);
+    document.body.style.overflow = !open ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      hamburger.setAttribute('aria-expanded','false');
+      mobileNav.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Reveal on scroll
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+</script>
+
+</body>
+</html>
